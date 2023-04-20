@@ -55,7 +55,7 @@ console.log(multiply(3,4))
 //  function with an implicit return.
 
 const multiply2 = (num1, num2) => num1 * num2
-console.log(multiply2(5,6))
+console.log(multiply2(4,5))
 
 // 2.3
 //  Define a function that takes two parameters and returns the
@@ -69,7 +69,14 @@ console.log(multiply2(5,6))
 //  function must contain an "if" statement without any "else"
 //  or "else if"s chained onto it.
 
-
+const divide = (top, bottom) => {
+    if(bottom === 0 && top !== 0){
+    console.log("cannot divide by 0")
+    return null}
+    return top / bottom
+}
+divide(1,0)
+console.log(divide(0,0))
 
 // *** Problem 3 ***
 //  Students should be able to invoke (call) functions.
@@ -79,7 +86,10 @@ console.log(multiply2(5,6))
 //  the function. The function should not return anything.
 //  Do not save the result of the function.
 
-
+function fun(){
+    console.log("Coding is fun!")
+}
+fun()
 
 // 3.2
 //  Define a function that takes one parameter, a number, and
@@ -88,6 +98,14 @@ console.log(multiply2(5,6))
 //  to three different variables.
 
 
+function plus50(num1){
+    return num1 + 50 
+}
+
+let var1 = plus50(10)
+let var2 = plus50(25)
+let var3 = plus50(40)
+console.log(var1, var2, var3)
 
 // 3.3
 //  Create an array with three values. These three values will be
@@ -95,7 +113,11 @@ console.log(multiply2(5,6))
 //  with each invokation having different arguments.
 //  After your array is created, log it to the console.
 
+let arr1 = [plus50(1), plus50(2), plus50(3)]
+console.log(arr1)
 
+arr1.push(plus50(4))
+console.log(arr1)
 
 // *** Problem 4 ***
 //  Students should understand what callback functions and higher
@@ -111,6 +133,8 @@ console.log(multiply2(5,6))
 function higher(num, cb) {
     return cb(num)
 }
+function cb(num5)
+console.log(higher(9,cb))
 
 
 // 4.1b

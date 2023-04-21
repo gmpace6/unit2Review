@@ -45,17 +45,17 @@ newFunc3()
 //  Your function must use the return keyword. Also, your function
 //  should not log anything.
 
-function multiply(num1, num2) {
+function mult(num1, num2) {
     return num1 * num2
 }
-console.log(multiply(3,4))
+console.log(mult(3,4))
 
 // 2.2
 //  Create the function from 2.1, only this time, use an arrow
 //  function with an implicit return.
 
-const multiply2 = (num1, num2) => num1 * num2
-console.log(multiply2(4,5))
+const mult2 = (a, b) => a * b
+console.log(mult2(4,5))
 
 // 2.3
 //  Define a function that takes two parameters and returns the
@@ -69,14 +69,14 @@ console.log(multiply2(4,5))
 //  function must contain an "if" statement without any "else"
 //  or "else if"s chained onto it.
 
-const divide = (top, bottom) => {
-    if(bottom === 0 && top !== 0){
+const div = (a, b) => {
+    if(b === 0 && a !== 0){
     console.log("cannot divide by 0")
     return null}
-    return top / bottom
+    return a / b
 }
-divide(1,0)
-console.log(divide(0,0))
+div(1,0)
+console.log(div(0,0))
 
 // *** Problem 3 ***
 //  Students should be able to invoke (call) functions.
@@ -85,6 +85,12 @@ console.log(divide(0,0))
 //  Define a function that logs "Coding is fun!", and invoke the
 //  the function. The function should not return anything.
 //  Do not save the result of the function.
+
+const fun0 = () => {
+    console.log("Coding is fun!") 
+}
+fun0()
+console.log(fun0()) // undefined
 
 function fun(){
     console.log("Coding is fun!")
@@ -133,7 +139,7 @@ console.log(arr1)
 function higher(num, cb) {
     return cb(num)
 }
-function cb(num) {
+function callback(num) {
     return num + 36
 }
 
@@ -143,5 +149,25 @@ function cb(num) {
 //  callback written in 4.1a. Save the result of this invocation
 //  to a variable.
 
-let var4 = higher(9, cb)
+let var4 = higher(9, callback)
 console.log(var4)
+
+
+
+
+
+// shallow vs deep copies .js
+
+let a = [1,2,3]
+let b = a
+b++
+console.log(a)
+console.log(b)
+// complex data types follow this shallow example (a new name added, pointing to original data type)
+
+let c = 8
+let d = c
+d++
+console.log(c)
+console.log(d)
+// simple data types follow this deep example (creating actual copy)

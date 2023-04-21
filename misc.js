@@ -69,14 +69,29 @@ console.log(result2)
 //  In the map method's callback, do the mathmatical operation to the array element (a number) with the number that was the third argument passed into the outer function.
 //  Return the mapped array from the entire function
 
-function changeNums(array, operator, amount)
-let array = [0,1,2,3,4,5]
+let array1 = [0,1,2,3,4,5,6]
 let operator = 'divide'
 let amount = 5
-array.map
+
+function changeNums(array1, operator, amount){
+    let array2 = array1.map((element) => {
+        if (operator === 'divide') {
+            return element / amount}
+        if (operator === 'multiply') {
+            return element * amount}
+        if (operator === 'add') {
+            return element + amount}
+        if (operator === 'subtract') {
+            return element - amount}
+    })
+return array2
+}
+
+console.log(changeNums(array1, operator, amount))
 
 // 2.2
 //  Invoke the 'changeNums' function passing in a valid value for each parameter. Save the result to a variable.
 //  You'll have to log to the console to see the returned array.
 
-
+let var5 = changeNums([1,2,3,4],'add',6)
+console.log(var5)

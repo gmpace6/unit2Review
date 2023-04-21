@@ -188,7 +188,7 @@ let objArr = [
 ]
 
 const conglom = objArr.reduce((acc, cur) => {
-    return acc + cur.name
+       return acc + cur.name
 }, '')
 
 console.log(conglom)

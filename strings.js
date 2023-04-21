@@ -13,6 +13,8 @@
 //  using a string method and save it to a new variable.
 
 const str1 = "Howdy, there!"
+const thirdChar = str1.charAt(2)
+console.log(thirdChar)
 
 
 // 1.1b
@@ -27,6 +29,8 @@ const str1 = "Howdy, there!"
 //  all-caps version of it using a string method.
 
 const str2 = "I forgot to turn off the oven!"
+const allCaps = str2.toUpperCase()
+console.log(allCaps)
 
 
 // 1.2b
@@ -40,20 +44,17 @@ const str2 = "I forgot to turn off the oven!"
 //  Using your Google sleuthing skills, find out what the .trim()
 //  method does, and explain it in comments below, in your own words.
 
-
+// https://www.w3schools.com/jsref/jsref_trim_string.asp
 
 // 1.4
-//  Using your Google sleuthing skills, find a JS string method
-//  that will find a specified substring in a string, and replace
-//  all of the occurences of that substring with another substring.
+//  Using your Google sleuthing skills, find a JS string method that will find a specified substring in a string, and replace all of the occurences of that substring with another substring.
 //  For example, given the string
 //    "I love to eat apples and bananas",
-//  changing all of the "a" substrings to "u" substrings
-//  will result in the string
+//  changing all of the "a" substrings to "u" substrings will result in the string
 //    "I love to eut upples and bununus".
 //  Put the name of the method you find in a comment below.
 
-
+// https://www.w3schools.com/jsref/jsref_replace.asp
 
 // *** Problem 2 ***
 //  Students should know how to concatenate strings.
@@ -69,10 +70,13 @@ const last = 'Paboni'
 const num = 2
 const phrase = 'want to mess'
 
+const threat = "my number " + num + "'s named \"" + first + " " + last + "\": and you don't " + phrase +"!" // \is escape for next char
+console.log(threat)
 
 // 2.2
 //  Do problem 2.1 by doing another way of string concatenation.
 //  For example, if the '+' operator was used, perhaps template
 //  literals should be used this time.
 
-
+const threat2 = `my number ${num}'s named "${first} ${last}": and you don't ${phrase}!`
+console.log(threat2)

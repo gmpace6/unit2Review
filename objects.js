@@ -6,31 +6,43 @@
 //  Students should be able to create object literals.
 
 // 1.1
-//  Create an object literal that has 5 properties.
-//  Each one of these properties should contain a
-//  different types of primitive values. (Primitive
-//  values are also know as "simple data types.")
+//  Create an object literal that has 5 properties.(num, str, boolean, undef, null)
+//  Each one of these properties should contain a different types of primitive values. (Primitive values are also know as "simple data types.")
 
-
+let myLit = {
+    a: 5,
+    b: "string",
+    c: true,
+    d: undefined,
+    e: null
+}
 
 // 1.2
 //  Create an object literal that has both primitive values
-//  and non-primitive values.
-
-
+//  and non-primitive values.(num, str, array, obj, anon inline impl return arrow fn)
+let myLit2 = {
+    a: 5,
+    b: 'string',
+    c: [1,2,3,4,5],
+    d: {
+        z: true,
+        y: false
+    },
+    e: () => 'cheese'
+}
 
 // *** Problem 2 ***
-//  Students should be able to access properties of
-//  objects in various ways.
+//  Students should be able to access properties of objects in various ways.
 
 // 2.1
-//  Given an object named person1, get the 'age'
-//  property with dot notation and save it to a variable.
+//  Given an object named person1, get the 'age' property with dot notation and save it to a variable.
 
 const person1 = {
     name: 'Joe',
     age: 80
 }
+const p1Age = person1.age
+console.log(p1Age)
 
 
 // 2.2
@@ -60,20 +72,19 @@ const person3 = {
 //  Note: this should be done in one line with destructuring.
 
 const person4 = {
-    name: 'George',
+    name1: 'George',
     age: 76
 }
-
+const {name1, age: years} = person4
+console.log(name1)
+console.log(years)
 
 // 2.5
-//  The variable person5 contains an object, which in turn
-//  contains objects and arrays that may contain more objects
-//  and arrays (this is what is referred to as a "nested data
-//  structure"). Retrieve the following out of the person5 object
-//  and save them as a variable:
+//  The variable person5 contains an object, which in turn contains objects and arrays that may contain more objects and arrays (this is what is referred to as a "nested data structure"). Retrieve the following out of the person5 object and save them as a variable:
 
 // 2.5a
 //  the model of person5's black vehicle,
+
 
 const person5 = {
     name: "Dominic",
@@ -125,11 +136,14 @@ const person5 = {
     ]
 }
 
+const blackVehicle = person5.possessionCategories[1].list[1].model
+console.log(blackVehicle)
 
 // 2.5b
 //  person5's second-listed sibling,
 
-
+const secondSibling = person5.siblings[1]
+console.log(secondSibling)
 
 // 2.5c
 //  the color of person5's 40-year-old furniture,
@@ -139,7 +153,8 @@ const person5 = {
 // 2.5d
 //  whether or not person5 has any outstanding warrants,
 
-
+const hasWarr = person5.hasOutstandingWarrants
+console.log(hasWarr)
 
 // 2.5e
 //  and a list (an array) of all of person5's vehicles.
@@ -155,7 +170,8 @@ const person5 = {
 //  Increment the age of person5 by one year.
 //  Use the ++ operator to do this.
 
-
+person5.age++
+console.log(person5.age)
 
 // 3.1b
 //  Increment the age of person5 by another year.
@@ -163,17 +179,20 @@ const person5 = {
 //  to be itself plus one (use the = operator
 //  rather than using the ++ operator).
 
-
+person5.age = person5.age + 1
+console.log(person5.age)
 
 // 3.1c
 //  Make it so that person5 has an outstanding warrant.
 
-
+person5.hasOutstandingWarrants = true
+console.log(person5.hasOutstandingWarrants)
 
 // 3.1d
 //  Give person5 another sibling named 'Hecktor'.
 
-
+person5.siblings.push('Hektor')
+console.log(person5)
 
 // 3.1e
 //  Change person5's last-listed car to have the color

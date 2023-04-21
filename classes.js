@@ -22,14 +22,31 @@
 //       this method has no parameters and both logs and returns
 //       the animal's primaryColor.
 
-
+class Animal {
+    constructor(weightInLbs, isVertebrate, pc) {
+        this.weightInLbs = weightInLbs
+        this.isVertebrate = isVertebrate
+        this.primaryColor = pc
+    }
+    incWeight(w) {
+        this.weightInLbs += w
+    }
+    printColor() {
+        console.log(this.primaryColor)
+        return this.primaryColor
+    }
+}
 
 // 1.2
 //  Make two instances of the Animal class, with any values you
 //   please, that are the correct data type (as mentioned above).
 //   Save the instances to variables.
 
+let a1 = new Animal(2, true, 'brown')
+let a2 = new Animal(50, false, 'pink')
 
+a1.incWeight(5)
+console.log(a1)
 
 // 1.3
 //  For both of the object instances made in problem 1.2, call
@@ -71,21 +88,38 @@
 //       The method will change the object's name property
 //       to be the name passed in.
 
+class Dog extends Animal {
+    constructor(weightInLbs, primaryColor, breed, heightAtWithers, name) {
+        super(weightInLbs, true, primaryColor)
+        this.breed = breed
+        this.heigghtAtWithersInInches = heightAtWithers
+        this.name = name
+        this.isGoodPuppers = true
+    }
 
+    bark() {
+        console.log("bow-wow")
+    }
+    
+    setName(name) {
+        this.name = name
+    }
+}
 
 // 2.2
 //  Make two instances of the Dog class, with any values you
 //   please, that are the correct data type (as mentioned above).
 //   Save the instances to variables.
 
-
+const maDog = new Dog(20, 'white', "poodle", 24, "Bingo")
+console.log(maDog)
 
 // 2.3
 //  For both of the object instances made in problem 2.2, call
 //   both the incWeight method (passing in a number) and the
 //   bark method.
 
-
+maDog.bark()
 
 // 2.4
 //  Log both of the Dog objects (the entire things) to the console.

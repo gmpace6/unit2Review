@@ -192,13 +192,15 @@ console.log(person5.hasOutstandingWarrants)
 //  Give person5 another sibling named 'Hecktor'.
 
 person5.siblings.push('Hektor')
-console.log(person5)
+// console.log(person5)
 
 // 3.1e
 //  Change person5's last-listed car to have the color
 //  purple.
 
-
+person5.possessionCategories[1].list[person5.possessionCategories[1].list.length -1].color = "purple"
+console.log(person5.possessionCategories[1])
+console.log(JSON.stringify(person5))
 
 // 3.1f
 //  Remove the "list" property from the first object of

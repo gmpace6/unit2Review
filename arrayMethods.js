@@ -14,13 +14,14 @@
 //  Given an array of numbers, map1, using the map method, create a new array named map2 that contains all the numbers from map1 subtracted by 1.
 
 const map1 = [1, 2, 3, 4, 5]
-let map2 = map1.map((element) => element -1)
+const map2 = map1.map((element) => element -1)
 console.log(map2)
 
 
 // 1.2
 //  Using the map method, create a new array, map3, that is the same as map1, except for all the numbers are converted to the string data type.
 let map3 = map1.map((element) => element.toString()) //(2) conv to binary, (16)conv to hex
+// let map3 = map1.map((element) => String(element)) //built-in string method
 // let map3 = map1.map((element) => element+'') //typeconversion
 // let map = map1.map((element) => `${element}`)
 console.log(map3)
@@ -63,13 +64,27 @@ const map4 = [
 
 const arrNum = [1, 5, 6, 8, 0, 19, -2]
 
+const newNumArr = arrNum.filter((e) => {
+    if(e % 2 === 1) {
+        return true
+    } // optional else{}
+    return false
+})
+console.log (newNumArr)
+
 
 // 2.2
 //  Using the array from 2.1, arrNum, create a new array
 //  using the filter method that only contains odd numbers
 //  that have an odd array index in the original array.
 
-
+const newNumArr2 = arrNum.filter((e, i) => {
+    if(e % 2 === 1 && i % 2 === 1) {
+        return true
+    }
+    return false
+})
+console.log (newNumArr2)
 
 // 2.3
 //  Given an array of strings, arrString, create a new array
@@ -92,10 +107,7 @@ const arrString = [
 
 // 3.1
 //  The block of code directly below this uses a for loop.
-//  Write your own code that has the same result as this code
-//  block, but does it using the forEach method. You may use
-//  the 'theNumArr' variable, but will need to declare a new
-//  variable to keep track of your sum.
+//  Write your own code that has the same result as this code block, but does it using the forEach method. You may use the 'theNumArr' variable, but will need to declare a new variable to keep track of your sum.
 
 let sum = 0
 let theNumArr = [5, 6, 7, 7, 8, 56, 9, 10]
@@ -103,6 +115,12 @@ for (let i = 0; i < theNumArr.length; i++) {
     sum += theNumArr[i]
 }
 
+let newSum = 0
+theNumArr.forEach((element) => {
+    newSum += element
+})
+console.log(sum)
+console.log(newSum)
 
 // 3.2
 //  Solve problem 1.1 using the forEach method instead of the
@@ -127,6 +145,12 @@ for (let i = 0; i < theNumArr.length; i++) {
 //  to sum all of the numbers together. Save this sum to a variable.
 
 const reduce1 = [30, 40, 70, 10, 50]
+const r1Result = reduce1.reduce((acc, currVal) => {
+    return acc + currVal
+})
+console.log(r1Result)
+
+
 
 // 4.2
 //  Like problem 4.1, use the reduce method to sum all of the numbers
@@ -135,15 +159,14 @@ const reduce1 = [30, 40, 70, 10, 50]
 //  by making the second argument of your reduce method invocation to be
 //  this initial value. Save your sum to a new variable.
 
-
+const r2Result = reduce1.reduce((acc, currVal) => {
+    return acc + currVal
+}, 100)
+console.log(r2Result)
 
 // 4.3
-//  objArr is an array of objects, as seen below. Use the reduce method
-//  to create a single string that is a conglomeration of all of the
-//  name attributes of all of the objects, and save the result to a variable.
-//  If done correctly, the resulting string for objArr will be
-//  "JoeDonaldBarakGeorge". Hint: you will likely need to use the
-//  typically-optional second parameter (initial value) of the reduce method.
+//  objArr is an array of objects, as seen below. Use the reduce method to create a single string that is a conglomeration of all of the name attributes of all of the objects, and save the result to a variable.
+//  If done correctly, the resulting string for objArr will be "JoeDonaldBarakGeorge". Hint: you will likely need to use the typically-optional second parameter (initial value) of the reduce method.
 
 let objArr = [
     {
@@ -164,3 +187,8 @@ let objArr = [
     },
 ]
 
+const conglom = objArr.reduce((acc, cur) => {
+    return acc + cur.name
+}, '')
+
+console.log(conglom)

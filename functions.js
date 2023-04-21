@@ -130,10 +130,10 @@ console.log(arr1)
 //  named "callback" that has one number parameter. Your callback
 //  function should return the sum of this number and 36.
 
-function higher(num5, cb) {
-    return num5 + cb(num6)
-}
-function cb(num6)
+// function higher(num5, cb) {
+//     return num5 + cb(num6)
+// }
+// function cb(num6)
 
 
 // 4.1b
@@ -142,5 +142,5 @@ function cb(num6)
 //  callback written in 4.1a. Save the result of this invocation
 //  to a variable.
 
-let var4 = higher(9, cb)
-console.log(var4)
+// let var4 = higher(9, cb)
+// console.log(var4)

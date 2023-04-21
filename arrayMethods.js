@@ -3,37 +3,25 @@
 // be valid JS code, unless stated otherwise.
 
 // Note:
-    // Students are expected to use a variety of higher order
-    // functions that can be called from JS arrays (since arrays
-    // are actually a type of object in JS, these functions are
-    // called "higher order array methods"). The mental effort
-    // associated with using these functions primarily comes from
-    // writing the callbacks as arguments for them.
+    // Students are expected to use a variety of higher order functions that can be called from JS arrays (since arrays are actually a type of object in JS, these functions are called "higher order array methods"). The mental effort associated with using these functions primarily comes from writing the callbacks as arguments for them.
 
-    // This can be conceptually challenging
-    // for students, as a given higher order function is what
-    // invokes the callback the developer writes, but the code
-    // for the higher order function is hidden to the developer.
-    // The developer must rely on documentation of the array
-    // functions to know how they use the callback, and to know
-    // how the callback must be written.
+    // This can be conceptually challenging for students, as a given higher order function is what invokes the callback the developer writes, but the code for the higher order function is hidden to the developer. The developer must rely on documentation of the array functions to know how they use the callback, and to know how the callback must be written.
 
 // *** Problem 1 ***
 //  Students should be able to use the array's map method
 
 // 1.1
-//  Given an array of numbers, map1, using the map method,
-//  create a new array named map2 that contains all the numbers
-//  from map1 subtracted by 1.
+//  Given an array of numbers, map1, using the map method, create a new array named map2 that contains all the numbers from map1 subtracted by 1.
 
 const map1 = [1, 2, 3, 4, 5]
+let map2 = map1.map((element) => (element -1))
+console.log(map2)
 
 
 // 1.2
-//  Using the map method, create a new array, map3, that is
-//  the same as map1, except for all the numbers are converted
-//  to the string data type.
-
+//  Using the map method, create a new array, map3, that is the same as map1, except for all the numbers are converted to the string data type.
+let map3 = map1.map((element) => (`"`+element+`"`))
+console.log(map3)
 
 
 // 1.3

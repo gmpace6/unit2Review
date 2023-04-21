@@ -32,6 +32,7 @@ function hasYellow(marbleArr) {
 
 let result1 = hasYellow(['yellow', 'red', 'blue', 'yellow', 'green'])
 let result2 = hasYellow(['red', 'red', 'red', 'red', 'red'])
+let result2 = hasYellow(['red', 'red', 'red', 'red', 'red'])
 
 console.log(result1)
 console.log(result2)
@@ -41,6 +42,7 @@ console.log(result2)
 // Does my function actually do what it was supposed to do? Why or why not?
 // Answer these question in comments below. Please feel free to run your
 // own tests with the function.
+// No, result1 seems to work, but result2 does not
 
 
 

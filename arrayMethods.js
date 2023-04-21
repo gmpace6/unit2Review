@@ -14,13 +14,15 @@
 //  Given an array of numbers, map1, using the map method, create a new array named map2 that contains all the numbers from map1 subtracted by 1.
 
 const map1 = [1, 2, 3, 4, 5]
-let map2 = map1.map((element) => (element -1))
+let map2 = map1.map((element) => element -1)
 console.log(map2)
 
 
 // 1.2
 //  Using the map method, create a new array, map3, that is the same as map1, except for all the numbers are converted to the string data type.
-let map3 = map1.map((element) => (`"`+element+`"`))
+let map3 = map1.map((element) => element.toString()) //(2) conv to binary, (16)conv to hex
+// let map3 = map1.map((element) => element+'') //typeconversion
+// let map = map1.map((element) => `${element}`)
 console.log(map3)
 
 
